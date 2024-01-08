@@ -1,0 +1,37 @@
+<p id="title">Coșul tău de cumpărături</p>
+
+<div class="products-container">
+  <ng-container *ngFor="let product of products">
+    <div class="product-item">
+      <div class="product-info">
+        <img [src]="getThumbnailUrl(product.image)" alt="Product Image">
+        <div class="text-info">
+          <h2>{{ product.name }}</h2>
+          <p>{{ product.description }}</p>
+        </div>
+      </div>
+
+      <div class="change-count">
+      <div class="value-container">
+        <button id="decrease-btn" (click)="decreaseValue()">-</button>
+        <div class="value">
+          {{ product.count }}
+        </div>
+        <button id="increase-btn" (click)="increaseValue()">+</button>
+      </div>
+
+        <div class="delete-container">
+          <button class="delete-btn" (click)="deleteProduct(product)">Șterge Produs</button>
+        </div>
+
+      </div>
+
+    </div>
+  </ng-container>
+
+  <p id="price"> <i> Preț Total:</i> </p>
+
+</div>
+
+
+<button id='continue'>Continuă</button>

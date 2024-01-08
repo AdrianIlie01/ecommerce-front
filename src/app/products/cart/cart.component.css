@@ -1,0 +1,120 @@
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  width: 95%;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  width: 25%;
+  margin-right: 10px;
+}
+
+.text-info {
+  flex-grow: 1;
+}
+
+.value-container {
+  display: flex;
+  align-items: center;
+}
+
+.delete-btn {
+  font-size: 1rem;
+  width: 150px;
+
+  border: 2px solid #f10c0c;
+  border-radius: 20px;
+  background-color: white;
+  padding: 10px 20px;
+
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.delete-btn:hover {
+  cursor: pointer;
+  background-color:#f10c0c;
+  color: white;
+}
+
+.change-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+}
+
+.value-container button {
+  border: 1px solid #ddd;
+  border-radius: 50%;
+
+  font-size: 1.2rem;
+  margin-left: 15px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+#decrease-btn:hover {
+  background-color: #f10c0c;
+  color: white;
+}
+
+#increase-btn:hover {
+  background-color: #4ec94e;
+  color: white;
+}
+
+.value, .value-container button {
+  font-size: 1.1rem;
+}
+
+#title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+#price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: green;
+  margin-left: 10px;
+}
+
+#continue {
+  
+}
+
+@media (max-width: 500px) {
+  h2, #price {
+    font-size: 1rem;
+  }
+
+  .value, .value-container button, .delete-btn {
+    font-size: 0.8rem;
+  }
+
+  .delete-btn {
+    padding: 5px;
+    width: 100%;
+  }
+
+}

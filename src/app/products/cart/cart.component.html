@@ -1,5 +1,6 @@
-<p id="title">Coșul tău de cumpărături</p>
+<p *ngIf="productsExist" id="title">Coșul tău de cumpărături</p>
 
+<div *ngIf="!continueForm && productsExist">
 <div class="products-container">
   <ng-container *ngFor="let product of products">
     <div class="product-item">
@@ -13,15 +14,15 @@
 
       <div class="change-count">
       <div class="value-container">
-        <button id="decrease-btn" (click)="decreaseValue()">-</button>
+        <button id="decrease-btn" (click)="decreaseValue(product.name)">-</button>
         <div class="value">
           {{ product.count }}
         </div>
-        <button id="increase-btn" (click)="increaseValue()">+</button>
+        <button id="increase-btn" (click)="increaseValue(product.name)">+</button>
       </div>
 
         <div class="delete-container">
-          <button class="delete-btn" (click)="deleteProduct(product)">Șterge Produs</button>
+          <button class="delete-btn" (click)="deleteProduct(product.name)">Șterge Produs</button>
         </div>
 
       </div>
@@ -29,9 +30,70 @@
     </div>
   </ng-container>
 
-  <p id="price"> <i> Preț Total:</i> </p>
+  <p *ngIf="!continueForm && productsExist" id="price"> <i> Preț Total: {{total}}</i> </p>
 
 </div>
 
 
-<button id='continue'>Continuă</button>
+<div id="continue-container">
+  <button id="continue" (click)="continue()">Continuă</button>
+</div>
+</div>
+
+
+<div *ngIf="!productsExist" class="no-items">
+  <p id="no-items">Coșul tău de cumpărături nu conține produse</p>
+  <button id="products" (click)="redirectToProducts()">Înapoi la produse</button>
+
+</div>
+
+
+<div class="form-class" *ngIf="continueForm">
+  <form [formGroup]="form" (ngSubmit)="completeOrder()">
+
+    <div class="">
+      <label class="email-container-label" for="name">Nume</label>
+      <input
+        formControlName="name"
+        id="name"
+        type="text"
+        placeholder="nume"
+      >
+    </div>
+
+    <div class="">
+      <label class="email-container-label" for="address">Adresă șantier</label>
+      <input
+        formControlName="address"
+        id="address"
+        type="text"
+        placeholder="Județ, Oraș, Stradă, Nr"
+      >
+    </div>
+
+    <div class="">
+      <label class="email-container-label" for="email">E-mail <span class="asterisk">*</span></label>
+      <input
+        formControlName="email"
+        id="email"
+        type="text"
+        placeholder="user.name@gmail.com"
+      >
+    </div>
+
+    <div class="">
+      <label class="email-container-label" for="phone">Număr de telefon <span class="asterisk">*</span></label>
+      <input
+        formControlName="phone"
+        id="phone"
+        type="number"
+        placeholder="+40********"
+      >
+    </div>
+
+    <button id="pay" (click)="pay()">Continuă spre plată</button>
+
+  </form>
+
+
+</div>

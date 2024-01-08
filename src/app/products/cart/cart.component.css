@@ -99,11 +99,49 @@ h2 {
   margin-left: 10px;
 }
 
-#continue {
-  
+#continue-container {
+  text-align: center;
+}
+
+.no-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#products {
+  margin-top: 25px;
+}
+
+#continue, #products, #pay {
+  font-size: 1rem;
+  border: 2px solid #4ec94e;
+  border-radius: 20px;
+  background-color: white;
+  padding: 10px 20px;
+  width: 250px;
+  margin-bottom: 15px;
+}
+
+#continue:hover, #products:hover, #pay:hover {
+  cursor: pointer;
+  background-color: #4ec94e;
+  color: white;
 }
 
 @media (max-width: 500px) {
+  form {
+    width: 250px!important;
+    margin-left: -10px;
+  }
+
+  #pay {
+    width: 270px !important;
+    margin-left: -2px;
+  }
+
   h2, #price {
     font-size: 1rem;
   }
@@ -117,4 +155,81 @@ h2 {
     width: 100%;
   }
 
+  #continue {
+    font-size: 1rem;
+    padding: 5px;
+    width: 150px;
+  }
+
+  #title {
+    font-size: 1.5rem;
+  }
+
+}
+
+#no-items {
+  text-align: center;
+  /*margin-top: 250px;*/
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: red;
+}
+
+
+.form-group {
+  margin-bottom: 15px; /* Add some margin between each form group */
+}
+
+.email-container-label {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+/* Optional: Style for the asterisk */
+.asterisk {
+  color: red;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+form {
+  width: 350px;
+  padding: 20px;
+  margin-top: -100px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+input {
+  height: 40px;
+  width: 100%;
+
+
+  /*border: none;*/
+  border: 1px solid rgb(153, 136, 136, 0.5);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(153, 136, 136, 0.5);
+  padding-left: 15px;
+  font-size: 16px;
+
+}
+
+#pay {
+  width: 370px;
+  margin-top: 25px;
+  font-size: 16px;
+
+}
+
+.form-class {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centrare orizontală */
+  align-items: center; /* Centrare verticală */
+  height: 100vh;
 }

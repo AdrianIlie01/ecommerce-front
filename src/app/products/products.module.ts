@@ -10,6 +10,7 @@ import {FaIconLibrary, FontAwesomeModule} from "@fortawesome/angular-fontawesome
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
     CommonModule,
     ProductsRoutingModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
   ]
 })
 export class ProductsModule {
